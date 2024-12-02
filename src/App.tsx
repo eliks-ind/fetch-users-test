@@ -54,17 +54,8 @@ const App: React.FC = () => {
     }
   };
 
-  // const deleteUser = () => {
-  //   if (users.length > 0) {
-  //     setUsers((prevUsers) => prevUsers.slice(0, -1));
-  //   } else {
-  //     alert("No users to delete.");
-  //   }
-
-  // };
-
   const deleteUser = (index: number) => {
-    setUsers((prevUsers) => prevUsers.filter((_, i) => i !== index));
+    setUsers((prevUsers) => prevUsers.filter((User, i) => i !== index));
   };
 
   return (
