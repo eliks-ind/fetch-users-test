@@ -54,6 +54,19 @@ const App: React.FC = () => {
     }
   };
 
+  // const deleteUser = () => {
+  //   if (users.length > 0) {
+  //     setUsers((prevUsers) => prevUsers.slice(0, -1));
+  //   } else {
+  //     alert("No users to delete.");
+  //   }
+
+  // };
+
+  const deleteUser = (index: number) => {
+    setUsers((prevUsers) => prevUsers.filter((_, i) => i !== index));
+  };
+
   return (
     <div>
       <h1>Ultimate Users List</h1>
@@ -61,6 +74,12 @@ const App: React.FC = () => {
         {users.map((user, index) => (
           <li key={index}>
             {user.name} {user.surname}
+            <button
+              onClick={() => deleteUser(index)}
+              style={{ marginLeft: "10px", padding: "5px 25px", margin: "3px" }}
+            >
+              Delete
+            </button>
           </li>
         ))}
       </ul>
